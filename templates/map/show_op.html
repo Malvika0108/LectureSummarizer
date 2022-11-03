@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'map/styles.css' %}" />
+
+    <title>MAP Lecture Summariser</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="{% url 'map:index' %}">Home</a>
+        
+        <a href="#about">About</a>
+    </div>
+        
+        <div style="margin: 5%;">
+        <h1>Here you go! :)</h1>
+    {% load static %}
+    <h2>SUMMARY</h2>
+    {{ user.outputSummary }}
+    <br>
+    
+    <!-- {{ links }} -->
+    <h2> LINKS </h2>
+    <ul>
+        {% for link in hyperLinks %}
+        <a href="{{ link }}" target="_blank">{{ link }}</a> <br>
+        {% endfor %}
+    </ul>
+    
+    <h2>KEYWORDS</h2>
+    {{ user.outputKeywords }}
+    <br>
+    </div>
+    
+</body>
+
+</html>

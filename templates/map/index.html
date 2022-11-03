@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'map/styles.css' %}" />
+    <title>MAP Lecture Summariser</title>
+
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        
+        <a href="#about">About</a>
+    </div>
+    <br>  
+    <div style="margin: 5%;">
+    <h1>WELCOME TO MAP LECTURE SUMMARIZER!</h1>
+    <p>Upload your lecture audios, and get a concise summary of it with important keywords and useful online resource links with just a click of a button :)</p>
+    
+    <br><br>
+    <h2>Upload any audio of your choice!</h2><br>
+    <form enctype="multipart/form-data" method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <input type="submit" class="button-1" role="button" value="Upload" />
+    </form>
+    </div>
+    <div class="footer" style="margin: -0.1%;">
+        <p style="text-align: centre;" id="about">Made by Annant Maheshwari, Malvika Koushik and Poorna Hegde.</p>
+    </div>
+</body>
+</html>
